@@ -1,9 +1,9 @@
 class Heaplens < Formula
   desc "Local Java heap analysis with a CLI and browser UI"
   homepage "https://github.com/sachinkg12/heaplens"
-  url "https://github.com/sachinkg12/heaplens/releases/download/cli-v0.1.1/heaplens-cli-0.1.1-darwin-arm64.tar.gz"
-  version "0.1.1"
-  sha256 "92daf8f8f4903d441c321c2bbeb5f1dd1e09a9a4a95196df18bddb82c6c557b5"
+  url "https://github.com/sachinkg12/heaplens/releases/download/cli-v0.1.2/heaplens-cli-0.1.2-darwin-arm64.tar.gz"
+  version "0.1.2"
+  sha256 "59fce0ea593822047dcd05b6ae0e1b4eb52f432dc69fa313408080410903bdcc"
   license "Apache-2.0"
 
   depends_on :macos
@@ -29,7 +29,7 @@ class Heaplens < Formula
   test do
     require "json"
     assert_match "heaplens", shell_output("#{bin}/heaplens --help")
-    assert_match "0.1.1", shell_output("#{bin}/heaplens --version")
+    assert_match "0.1.2", shell_output("#{bin}/heaplens --version")
     header = "JAVA PROFILE 1.0.2\0" + [8].pack("N") + [0].pack("Q>")
     array = [0xff].pack("C") + [512].pack("Q>") + [0x23].pack("C") +
       [512].pack("Q>") + [0, 9].pack("N2") + [8].pack("C") + ("x" * 9)
